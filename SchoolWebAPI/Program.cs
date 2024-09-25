@@ -18,11 +18,12 @@ builder.Services.AddDbContext<SchoolDbContext>(
 // Services
 builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<IGenderService, GenderService>();
-
+builder.Services.AddScoped<ITeacherService, TeacherService>();
 
 // Repositories
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 builder.Services.AddScoped<IGenderRepository, GenderRepository>();
+builder.Services.AddScoped<ITeacherRepository, TeacherRepository>();
 
 // Cors
 builder.Services.AddCors(options => options.AddPolicy("AllowWebApp" ,
