@@ -110,13 +110,13 @@
         {
             try
             {
-                var listStudents = await _studentService.GetStudentById(id);
+                var student = await _studentService.GetStudentById(id);
 
-                if (!listStudents.IsSuccess)
-                    return BadRequest(listStudents.ErrorMessage);
+                if (!student.IsSuccess)
+                    return BadRequest(student.ErrorMessage);
 
 
-                return Ok(listStudents.Value);
+                return Ok(student.Value);
             }
             catch (Exception ex)
             {

@@ -66,7 +66,7 @@
                 var teacher = await _repository.GetTeacherByid(id);
 
                 if (teacher == null)
-                    return Result<Teacher>.Failure("No student found");
+                    return Result<Teacher>.Failure("No teachers found");
 
                 return Result<Teacher>.Success(teacher);
             }

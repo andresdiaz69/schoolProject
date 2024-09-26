@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace SchoolWebAPI.Domain.Models;
 
@@ -13,7 +14,9 @@ public partial class Grade
 
     public bool Active { get; set; }
 
+    [JsonIgnore]
     public virtual ICollection<GradeStudent> GradeStudents { get; set; } = new List<GradeStudent>();
 
-    public virtual Teacher IdTeacherNavigation { get; set; } = null!;
+    [JsonIgnore]
+    public virtual Teacher? IdTeacherNavigation { get; set; } 
 }
